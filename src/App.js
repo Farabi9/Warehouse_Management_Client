@@ -1,23 +1,25 @@
 
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './LeatherWearHouse/Home/Footer/Footer';
-import Header from './LeatherWearHouse/Home/Header/Header';
-import Products from './LeatherWearHouse/Home/Products/Products';
-import Slider from './LeatherWearHouse/Slider/Slider';
+import Footer from './LeatherWearHouse/Footer/Footer';
+import Header from './LeatherWearHouse/Header/Header';
+import Home from './LeatherWearHouse/Home/Home';
+
 
 
 function App() {
- 
+
   return (
     <div className="App">
-                     <Header></Header>
+            
 
-             <Routes>
-                
-              
-             </Routes>
-             <Footer></Footer>
+<Header></Header>
+<Routes>
+  <Route path='/' element={<Home></Home>}></Route>
+  <Route path='/home' element={<Home></Home>}></Route>
+</Routes>
+<Footer></Footer>
+
     </div>
   );
 }
