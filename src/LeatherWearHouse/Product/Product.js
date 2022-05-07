@@ -3,10 +3,10 @@ import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {name, img, quantity, description,prize, suplierName} = product;
+    const {name, img, quantity, description,prize, suplierName, _id} = product;
     const navigate = useNavigate();
     const NavigateInventory = () =>{
-        navigate('/inventory')
+        navigate(`/inventory/${_id}`)
     }
     return (
         <div>

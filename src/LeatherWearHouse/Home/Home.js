@@ -7,8 +7,8 @@ const Home = () => {
     return (
         <div>
             <Slider></Slider>
-               <Products></Products>
-          </div>
+            <Products></Products>
+        </div>
     );
 };
 
