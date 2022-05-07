@@ -1,17 +1,23 @@
 
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import app from './firebase.init';
-import { getAuth, GoogleAuthProvider,  } from "firebase/auth";
+import Footer from './LeatherWearHouse/Home/Footer/Footer';
+import Header from './LeatherWearHouse/Home/Header/Header';
+import Products from './LeatherWearHouse/Home/Products/Products';
+import Slider from './LeatherWearHouse/Slider/Slider';
 
-const auth = getAuth(app);
 
 function App() {
  
   return (
     <div className="App">
-        <button >
-          Google Sign In
-          </button>    
+                     <Header></Header>
+
+             <Routes>
+                
+              
+             </Routes>
+             <Footer></Footer>
     </div>
   );
 }
