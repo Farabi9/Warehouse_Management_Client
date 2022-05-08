@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Product = ({product}) => {
     const {name, img, quantity, description,prize, suplierName, _id} = product;
@@ -9,7 +9,7 @@ const Product = ({product}) => {
         navigate(`/inventory/${_id}`)
     }
     return (
-        <div>
+        <>
             <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={product.img} />
   <Card.Body>
@@ -35,11 +35,13 @@ const Product = ({product}) => {
         </h5>
     </ListGroupItem>
   </ListGroup>
-   <button onClick={NavigateInventory}>
+   <button onClick={() =>NavigateInventory(_id)}>
        Update
    </button>
 </Card>
-        </div>
+
+        </>
+       
     );
 };
 
