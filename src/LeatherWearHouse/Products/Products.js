@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import useProducts from '../../useProducts';
 import Product from '../Product/Product';
 import './Products.css'
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() =>{
-        fetch('http://localhost:5000/products')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    },[])
+    const [products, setProducts] = useProducts();
+   
 
     return (
         <div className='items'>
@@ -21,6 +19,7 @@ const Products = () => {
               product={product}
               ></Product>)
           }
+          <Link to='manageInventory'>ManageInventory</Link>
         </div>
     );
 };

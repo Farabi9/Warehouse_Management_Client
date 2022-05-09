@@ -10,19 +10,21 @@ const Inventory = () => {
     const {id} = useParams();
     const [product] = useProductDetail(id);
     const [products, setProducts] = useProducts()
+    
 
     const handleDeliver = () =>{
         const deliver = window.confirm("Confirm Delivery?")
         if(deliver){
-            fetch(`http://localhost:5000/products/${id}`,{
+            fetch(`http://localhost:5000/products/${id}`,
+            {
                 method: "DELETE"
             })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
                 const quantity = products.quantity;
-                const newQuantity = quantity -1;
-                setProducts(newQuantity)
+                const newQuantity = quantity - 1;
+                console.log(newQuantity)
             })
 
         }
