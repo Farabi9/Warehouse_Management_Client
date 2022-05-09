@@ -24,9 +24,9 @@ const AddProduct = () => {
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder='product-name' className='mb-2'  {...register("name", { required: true, maxLength: 20 })} />
                 <textarea placeholder='description' className='mb-2' {...register("description")} />
-                <input placeholder='price' className='mb-2' type="number" {...register("price")} />
+                <input placeholder='prize' className='mb-2' type="number" {...register("prize")} />
                 <input placeholder='Quantity' className='mb-2' type="number" {...register("quantity")} />
-                <input placeholder='suplier-name' className='mb-2'  {...register("name", { required: true, maxLength: 20 })} />
+                <input placeholder='suplierName' className='mb-2'  {...register("suplierName", { required: true, maxLength: 20 })} />
                 <input placeholder='photo URL' className='mb-2' type="text" {...register("img")} />
                 <input type="submit" value='Add service' />
             </form>

@@ -3,7 +3,12 @@ import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {name, img, quantity, description,prize, suplierName, _id} = product;
+    
+    const {img, description,suplierName, _id} = product;
+    const prize = parseInt(product.prize);
+    const quantity = parseInt(product.quantity);
+    
+    
     const navigate = useNavigate();
     const NavigateInventory = () =>{
         navigate(`/inventory/${_id}`)
@@ -18,15 +23,15 @@ const Product = ({product}) => {
       {product.description}
     </Card.Text>
   </Card.Body>
-  <ListGroup className="list-group-flush">
+  <ListGroup >
     <ListGroupItem>
-        <h2>
-            Prize: ${product.prize}
-        </h2>
+        
+            Price: {prize}
+        
     </ListGroupItem>
     <ListGroupItem >
         <h5>
-            Quantity : {product.quantity}
+            Quantity : {quantity}
         </h5>
     </ListGroupItem>
     <ListGroupItem>

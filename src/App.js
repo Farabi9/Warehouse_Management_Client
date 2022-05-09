@@ -10,6 +10,7 @@ import ManageInventory from './LeatherWearHouse/ManageInventory/ManageInventory'
 
 
 
+
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
  <Route path='/inventory/:id' element={<Inventory></Inventory>}></Route>
  <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
  <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+ 
 </Routes>
 <Footer></Footer>
 

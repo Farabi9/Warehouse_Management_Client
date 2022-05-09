@@ -9,27 +9,27 @@ import useProducts from '../../useProducts';
 const Inventory = () => {
     const {id} = useParams();
     const [product] = useProductDetail(id);
-    const [products, setProducts] = useProducts()
-    
+   
+    const handleUpdate = (e) =>{
+      const quantity = e.target.quantity.value;
+   
+      const updatedQuantity = JSON.parse(quantity -1);
 
-    const handleDeliver = () =>{
-        const deliver = window.confirm("Confirm Delivery?")
-        if(deliver){
-            fetch(`http://localhost:5000/products/${id}`,
-            {
-                method: "DELETE"
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                const quantity = products.quantity;
-                const newQuantity = quantity - 1;
-                console.log(newQuantity)
-            })
+      fetch(`http://localhost:5000/products/${id}`, {
+        method:"PUT",
+        headers: {
+          'content-type' : 'application/json'
+        },
+        body: JSON.stringify(updatedQuantity)
+      })
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data);
+      
+      })
+    }
 
-        }
-    
-     }
+   
     
     
     return (
@@ -48,8 +48,8 @@ const Inventory = () => {
     <ListGroupItem>{product.suplierName}</ListGroupItem>
   </ListGroup>
   <Card.Body>
-   <button onClick={handleDeliver}>
-       Delivered
+   <button onClick={handleUpdate}>
+       Delivered 
    </button>
    <button>
       <input type="number" /> Stock

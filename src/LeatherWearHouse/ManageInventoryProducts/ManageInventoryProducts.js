@@ -7,6 +7,11 @@ const ManageInventoryProducts = ({manageInventoryProducts}) => {
             <h2>
                 {manageInventoryProducts.name}
             </h2>
+            <h5>
+                {
+                    manageInventoryProducts.prize
+                }
+            </h5>
         </div>
     );
 };
