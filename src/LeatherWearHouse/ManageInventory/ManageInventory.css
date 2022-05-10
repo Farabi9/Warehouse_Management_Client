@@ -1,0 +1,16 @@
+.inventory{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.add{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+.addProduct{
+    margin-top: 10px;
+   background-color: orange;
+   border: 0;
+   border-radius: 20px;
+   padding: 10px;
+}

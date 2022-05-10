@@ -9,6 +9,7 @@ import Header from './LeatherWearHouse/Header/Header';
 import Home from './LeatherWearHouse/Home/Home';
 import Inventory from './LeatherWearHouse/Inventory/Inventory';
 import ManageInventory from './LeatherWearHouse/ManageInventory/ManageInventory';
+import NotFound from './LeatherWearHouse/NotFound';
 import Login from './LeatherWearHouse/Registration/Login/Login';
 import Signup from './LeatherWearHouse/Registration/Signup/Signup';
 
@@ -37,6 +38,7 @@ function App() {
   <ManageInventory></ManageInventory>
  </AuthRequire>}></Route>
  <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
+ <Route path='*' element={<NotFound></NotFound>}></Route>
  
 </Routes>
 <Footer></Footer>

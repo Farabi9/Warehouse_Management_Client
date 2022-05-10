@@ -38,23 +38,26 @@ const Signup = () => {
     }
 
     return (
-        <div className='register-form'>
-        <h2 style={{ textAlign: 'center' }}>
-            Please register
-        </h2>
+        <div className='register-form bg-success mx-5 p-5'>
+        <h1 className='mt-3' style={{ textAlign: 'center' }}>
+            SignUp
+        </h1>
         <form onSubmit={handleSignup}>
-            <input type="text" name='name' id='' placeholder='Your Name' />
+            <input className='w-50' type="text" name='name' id='' placeholder='Your Name' />
             <br />
-            <input type="text" name='email' id='' placeholder='Email Address' required />
             <br />
-            <input type="password" name="password" id="" placeholder='Password' required />
+            <input className='w-50' type="text" name='email' id='' placeholder='Email Address' required />
+            <br />
+            <br />
+            <input className='w-50' type="password" name="password" id="" placeholder='Password' required />
+            <br />
             <br />
             <input
 
-                className='bg-dark text-white mt-2 w-50 d-block mx-auto' type="submit" value="Signup" />
+                className='bg-warning text-white mt-2 w-10 d-block mx-auto' type="submit" value="Signup" />
 
         </form>
-        <p>Already have an accout? <Link to='/login' className='text-primary text-decoration-none' onClick={navigateLogin}>Please Login</Link></p>
+        <p>Already have an accout? <Link to='/login' className='text-primary text-decoration-none' onClick={navigateLogin}> <button className='btn btn-primary'>Login</button> </Link></p>
         <ThirdPartyLogin></ThirdPartyLogin>
 
     </div>

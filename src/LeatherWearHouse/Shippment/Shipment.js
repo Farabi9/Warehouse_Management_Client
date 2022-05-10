@@ -4,9 +4,9 @@ import shipment from '../../Images/shipment.jpg'
 
 const Shipment = () => {
     return (
-        <div className='d-flex '>
-           <div className='img'>
-           <img src={shipment} alt="" />
+        <div  className='shipment'>
+           <div >
+           <img className='img' src={shipment} alt="" />
            </div>
            <div className='text'>
                <h2>

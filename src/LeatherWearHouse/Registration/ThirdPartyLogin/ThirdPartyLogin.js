@@ -25,11 +25,11 @@ const ThirdPartyLogin = () => {
 
     }
     return (
-        <div>
+        <div className='w-100'>
         <div className='d-flex align-items-center'>
-            <div style={{ height: '1px' }} className='bg-dark w-50'></div>
+            <div style={{ height: '1px' }} className='bg-danger w-50'></div>
             <p className='mt-2 px-2'>or</p>
-            <div style={{ height: '1px' }} className='bg-dark w-50'></div>
+            <div style={{ height: '1px' }} className='bg-danger w-50'></div>
         </div>
        {
            errorFinding
@@ -37,7 +37,7 @@ const ThirdPartyLogin = () => {
         <div>
             <button
                 onClick={() => signInWithGoogle()}
-                className='btn btn-warning w-50 d-block mx-auto my-2'>
+                className='btn btn-danger w-30 d-block mx-auto my-2'>
                 <img style={{ width: '30px' }} src={google} alt="" />
                 <span className='px-2'>Google Sign In</span>
             </button>

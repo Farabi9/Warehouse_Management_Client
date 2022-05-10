@@ -1,5 +1,6 @@
 
 
+import { useEffect, useState } from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useProductDetail from '../../useProductDetail';
@@ -8,15 +9,46 @@ import useProductDetail from '../../useProductDetail';
 
 const Inventory = () => {
   const { id } = useParams();
-  const [product] = useProductDetail(id);
+  const [product, setProduct] = useState({});
+ 
+  
+  useEffect(() =>{
+      fetch(`https://stark-escarpment-05215.herokuapp.com/products/${id}`)
+      .then(res => res.json())
+      .then(data => setProduct(data))
+  },[])
+ 
 
-
+      const updateQuantity = event =>{
+        
+          event.preventDefault();
+          const quantity = product.quantity;
+          const newQuantity = parseInt(quantity) -1;
+  
+          const updatedQuantity = { newQuantity };
+          
+          const url = `https://stark-escarpment-05215.herokuapp.com/products/${id}`
+          fetch(url, {
+              method: 'PUT',
+              headers: {
+                  'content-type': 'application/json'
+              },
+              body: JSON.stringify(updatedQuantity)
+          })
+          .then(res => res.json())
+          .then( data =>{
+              console.log('success', data)
+              alert('user updated successfully')
+              
+          })
+    
+     }
 
 
 
   return (
-    <div>
-      <Card style={{ width: '18rem' }}>
+    <div className='w-50 mx-auto'>
+      <Card style={{ width: '40rem' }}>
         <Card.Img variant="top" src={product.img} />
         <Card.Body>
           <Card.Title>{product.name}</Card.Title>
@@ -25,17 +57,20 @@ const Inventory = () => {
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>{product.prize}</ListGroupItem>
-          <ListGroupItem>{product.quantity}</ListGroupItem>
-          <ListGroupItem>{product.suplierName}</ListGroupItem>
+          <ListGroupItem>Price:{product.prize}</ListGroupItem>
+          <ListGroupItem>Quantity:{product.quantity}</ListGroupItem>
+          <ListGroupItem>Suplier Name:{product.suplierName}</ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <button>
+          <button className='btn btn-danger' onClick={updateQuantity}>
             Delivered
           </button>
+      <br />    <br />
           <div>
             <input type="number" />
-            <button>
+
+     <br />            
+            <button className='btn btn-warning'>
               Re-stock   </button>
           </div>
 

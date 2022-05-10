@@ -1,4 +1,5 @@
 import React from 'react';
+import './Product.css'
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -15,9 +16,9 @@ const Product = ({ product }) => {
         navigate(`/inventory/${_id}`)
     }
     return (
-        <>
+        <div >
             <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={product.img} />
+                <Card.Img variant="top"  src={product.img} />
                 <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>
@@ -41,12 +42,12 @@ const Product = ({ product }) => {
                         </h5>
                     </ListGroupItem>
                 </ListGroup>
-                <button onClick={() => NavigateInventory(_id)}>
+                <button className='btn btn-primary' onClick={() => NavigateInventory(_id)}>
                     Update
                 </button>
             </Card>
 
-        </>
+        </div>
 
     );
 };

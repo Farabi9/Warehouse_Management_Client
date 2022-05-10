@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-import useProducts from '../../useProducts';
 
 const ManageInventoryProducts = ({manageInventoryProducts}) => {
     const {name, img, quantity, description,prize, suplierName, _id} = manageInventoryProducts;
     const [products, setProducts] = useState();
 
+
     const handleDelete = id =>{
         const proceed = window.confirm('Are you sure?');
         if(proceed){
-            fetch(`http://localhost:5000/products/${id}`, {
+            fetch(`https://stark-escarpment-05215.herokuapp.com/products/${id}`, {
                 method: "DELETE"
             })
             .then(res => res.json())
@@ -49,7 +49,7 @@ const ManageInventoryProducts = ({manageInventoryProducts}) => {
                     </ListGroupItem>
                 </ListGroup>
                 
-              <button onClick={() => handleDelete(manageInventoryProducts._id)}>
+              <button className='btn btn-danger' onClick={() => handleDelete(manageInventoryProducts._id)}>
                   Delete
               </button>
             </Card>
