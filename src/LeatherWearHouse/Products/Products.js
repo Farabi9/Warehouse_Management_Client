@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import useProducts from '../../useProducts';
 import Product from '../Product/Product';
 import './Products.css'
 
 const Products = () => {
-    const [products, setProducts] = useProducts();
+    const [products] = useProducts();
    
 
     return (
@@ -19,7 +17,7 @@ const Products = () => {
               product={product}
               ></Product>)
           }
-          <Link to='manageInventory'>ManageInventory</Link>
+         
         </div>
     );
 };

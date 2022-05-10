@@ -7,6 +7,7 @@ const Product = ({ product }) => {
     const { img, description, suplierName, _id } = product;
     const prize = parseInt(product.prize);
     const quantity = parseInt(product.quantity);
+  
 
 
     const navigate = useNavigate();

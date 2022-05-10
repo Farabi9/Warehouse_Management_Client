@@ -41,6 +41,7 @@ const Inventory = () => {
 
         </Card.Body>
       </Card>
+     
     </div>
   );
 };
