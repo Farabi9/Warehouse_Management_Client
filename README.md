@@ -1,6 +1,27 @@
-# Getting Started with Create React App
+## Leather House
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Leather House](https://warehouse-inventory-5bba7.web.app/).
+
+* I have setup header section
+* Then I finish slider
+* Then I took into backend part 
+* After that I finished login signup process
+* last I finished backed server part
+
+## Tecnologis I use: 
+1. React app
+2. React router
+3. Firebase
+4. React firebase hook
+5. Firebase Hosting
+6. React Bootstrap
+7. React Toastify
+8. GitHub
+9. nodejs
+10. express.js
+11. mongodb
+12. dotenv
+13. cors
 
 ## Available Scripts
 
