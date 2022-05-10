@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddProduct from './LeatherWearHouse/AddProduct/AddProduct';
 import AuthRequire from './LeatherWearHouse/AuthRequire/AuthRequire';
+import Blog from './LeatherWearHouse/Blog/Blog';
 import Footer from './LeatherWearHouse/Footer/Footer';
 import Header from './LeatherWearHouse/Header/Header';
 import Home from './LeatherWearHouse/Home/Home';
@@ -29,9 +30,12 @@ function App() {
  <Route path='/inventory/:id' element={<AuthRequire>
   <Inventory></Inventory>
  </AuthRequire>}></Route>
+ <Route path='/blog' element={<Blog></Blog>}></Route>
  
  <Route path='/signup' element={<Signup></Signup>}></Route>
- <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
+ <Route path='/manageInventory' element={<AuthRequire>
+  <ManageInventory></ManageInventory>
+ </AuthRequire>}></Route>
  <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
  
 </Routes>

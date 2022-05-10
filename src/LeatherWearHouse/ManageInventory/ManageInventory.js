@@ -4,6 +4,7 @@ import ManageInventoryProducts from '../ManageInventoryProducts/ManageInventoryP
 
 const ManageInventory = () => {
     const [products] = useProducts();
+  
     
     return (
         <div>
@@ -13,9 +14,14 @@ const ManageInventory = () => {
            {
                products.map(manageInventoryProducts => <ManageInventoryProducts
                key={manageInventoryProducts._id}
-                manageInventoryProducts={manageInventoryProducts}
-               ></ManageInventoryProducts>)
+                manageInventoryProducts={manageInventoryProducts}>
+                 
+                </ManageInventoryProducts>)
            }
+           
+          
+          
+          
            <div>
                <button >
                   <Link to='/addProduct'> Add New Leather Products</Link>
